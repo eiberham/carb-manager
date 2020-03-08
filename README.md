@@ -27,7 +27,7 @@
 - Make sure the Recipe title gets truncated after 2 lines
 - The star ratings should be able to work with half-stars.
 - If a recipe duration is longer than 60 minutes, the format should be `x hr x min`
-- Add an `energy-units` prop which will take either `calories` or `kilojoules`. This will determine which energy unit to display. 1 calorie = 4.184 kJ.
+- Add an `energy-units` prop which will take either `calories` (default) or `kilojoules`. This will determine which energy value/unit to display. 1 calorie = 4.184 kJ. The number value passed in as a prop will always represent calories, so if `kilojoules` is selected, a conversion needs to take place.
 
 ### Interactions
 
