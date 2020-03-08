@@ -1,17 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <div class="cm-container">
+      <div class="cm-logo-wrapper">
+        <img alt="Carb Manager" src="./assets/cm-logo.svg" class="cm-logo" />
+      </div>
+      <h2>Carb Manager Dev Assignment</h2>
+      <p>See the README file for assignment requirements.</p>
+
+      <div class="premium-recipe-wrapper">
+        <PremiumRecipeCard />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import PremiumRecipeCard from "./components/PremiumRecipeCard.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld
+    PremiumRecipeCard
   }
 };
 </script>
@@ -24,5 +33,28 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+</style>
+
+<style scoped>
+.cm-logo-wrapper {
+  margin-bottom: 30px;
+}
+
+.cm-logo {
+  max-width: 150px;
+  height: auto;
+}
+
+.cm-container {
+  max-width: 960px;
+  margin: auto;
+}
+
+/** Remove these styles when done */
+.premium-recipe-wrapper {
+  margin-top: 100px;
+  border: 2px dashed red;
+  padding: 16px;
 }
 </style>
