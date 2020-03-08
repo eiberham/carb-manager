@@ -1,6 +1,6 @@
 # Carb Manager Dev Assignment
 
-### Screenshots
+## Design
 
 **Card:**
 
@@ -12,9 +12,11 @@
 
 <img src=".github/Hover.png" width="500">
 
-### Figma 
+**Figma Link:**
 
 [Link coming soon]()
+
+---
 
 ## Assignment Requirements:
 
