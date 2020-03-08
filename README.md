@@ -1,5 +1,17 @@
 # Carb Manager Dev Assignment
 
+### Screenshots
+
+**Card:**
+
+<img src=".github/PremiumRecipeCard.png" width="500">
+
+**Hover:**
+
+20% opacity white fill when hovering over the card.
+
+<img src=".github/Hover.png" width="500">
+
 ## Assignment Requirements:
 
 ### UI
