@@ -51,6 +51,7 @@ There is a `PremiumRecipeCard.spec.js` file which you can use to write some test
 - Fork this repo to get started. Please don't create everything with just one commit. We would love to see how you structure your commits.
 - Don't feel like you have to stay within the placeholder files.  If you want to create some helper/utility functions, go ahead and create the appropriate file/folders for that. 
 - If you see any component inside of this Recipe Card that might be useful to re-use in other areas, feel free to split it out into its own component. Don't overengineer it, but there might be something that could be re-used.
+- If you do decide to create sub components, bonus points for creating their own stories & tests :)
 - Macro dots
   - Red: Carbs
   - Blue: Protein
