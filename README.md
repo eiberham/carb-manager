@@ -32,7 +32,7 @@
 ### Interactions
 
 - The whole card will be clickable. Make sure that the event is working properly. You should see a "clicked" message in the Storybook "actions" tab when clicking on the component.
-- The "heart" in the top right won't be clickable, but it should be filled in based on a certain prop value.
+- Because the whole card is clickable, the "heart" icon in the top right won't be interactive. Instead, it should be empty or filled in depending on a certain prop value.
 
 ### Storybook
 
