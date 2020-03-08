@@ -25,7 +25,7 @@
 - Translate the design as closely as possible to custom CSS. We've also provided hover styles for you to replicate.
 - Use SVG's for the custom icons. These can be grabbed from the Figma file.
 - Make sure the Recipe title gets truncated after 2 lines
-- The star reviews should be able to work with half-stars.
+- The star ratings should be able to work with half-stars.
 - If a recipe duration is longer than 60 minutes, the format should be `x hr x min`
 - Add an `energy-units` prop which will take either `calories` or `kilojoules`. This will determine which energy unit to display. 1 calorie = 4.184 kJ.
 
