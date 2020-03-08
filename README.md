@@ -12,6 +12,10 @@
 
 <img src=".github/Hover.png" width="500">
 
+### Figma 
+
+[Link coming soon]()
+
 ## Assignment Requirements:
 
 ### UI
