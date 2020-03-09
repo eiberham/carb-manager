@@ -14,7 +14,7 @@
 
 **Figma Link:**
 
-[Link coming soon]()
+[https://www.figma.com/file/Hv0bOihxG5M40ASYsFBrVR/Interview-Assignment?node-id=0%3A1](https://www.figma.com/file/Hv0bOihxG5M40ASYsFBrVR/Interview-Assignment?node-id=0%3A1)
 
 ---
 
@@ -49,7 +49,7 @@ There is a `PremiumRecipeCard.spec.js` file which you can use to write some test
 ### Other Notes
 
 - Fork this repo to get started. Please don't create everything with just one commit. We would love to see how you structure your commits.
-- Don't feel like you have to stay within the placeholder files.  If you want to create some helper/utility functions, go ahead and create the appropriate file/folders for that. 
+- Don't feel like you have to stay within the placeholder files. If you want to create some helper/utility functions, go ahead and create the appropriate file/folders for that.
 - If you see any elements inside of this Recipe Card design that could be useful to re-use in other areas, feel free to split them out into their own sub components. Don't overengineer it by breaking every single element out, but there might be some that would be better off as small, re-usable components.
 - If you do decide to create sub components, bonus points for creating their own stories & tests :)
 - Macro dots
@@ -58,7 +58,13 @@ There is a `PremiumRecipeCard.spec.js` file which you can use to write some test
   - Yellow: Fats
 - If you are unclear about something or want to run something by me, please feel free to shoot me an email.
 
----
+### Reusability
+
+Keep in mind that there may be other variations of the Recipe Card design. Take a look at this **Recipe of the Day** card design:
+
+<img src=".github/ROTD.png" width="500">
+
+Don't build out this component (unless you have extra time), but please explain how you would build out this `<RecipeOfTheDay>` component with maximum code re-use from the `<PremiumRecipeCard>`, as they mostly share the same data props with just a tweaked design.
 
 ## Project setup
 
