@@ -56,7 +56,8 @@ There is a `PremiumRecipeCard.spec.js` file which you can use to write some test
   - Red: Carbs
   - Blue: Protein
   - Yellow: Fats
-- If you are unclear about something or want to run something by me, please feel free to shoot me an email.
+- If you are unclear about something or want to run something by the team, please feel free to reach out. We like to get a sense of how you would work/collaborate on a real task.
+- Send us over the GitHub URL when you are complete so we can check it out!
 
 ### Reusability
 
@@ -65,6 +66,8 @@ Keep in mind that there may be other variations of the Recipe Card design. Take 
 <img src=".github/ROTD.png" width="500">
 
 Don't build out this component (unless you have extra time), but please explain how you would build out this `<RecipeOfTheDay>` component with maximum code re-use from the `<PremiumRecipeCard>`, as they mostly share the same data props with just a tweaked design.
+
+You can send that over to us via email/Slack when you are done with the assignment, or you can just include it in the README file, whatever works best!
 
 ## Project setup
 
