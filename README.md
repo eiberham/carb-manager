@@ -48,7 +48,7 @@ There is a `PremiumRecipeCard.spec.js` file which you can use to write some test
 
 ### Other Notes
 
-- Fork this repo to get started. Please don't create everything with just one commit. We would love to see how you structure your commits.
+- **Clone** the repo (not fork) to get started. Please don't create everything with just one commit. We would love to see how you structure your commits.
 - Don't feel like you have to stay within the placeholder files. If you want to create some helper/utility functions, go ahead and create the appropriate file/folders for that.
 - If you see any elements inside of this Recipe Card design that could be useful to re-use in other areas, feel free to split them out into their own sub components. Don't overengineer it by breaking every single element out, but there might be some that would be better off as small, re-usable components.
 - If you do decide to create sub components, bonus points for creating their own stories & tests :)
