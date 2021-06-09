@@ -20,6 +20,12 @@
 
 ## Assignment Requirements:
 
+### Data
+
+- Retrieve the recipe JSON data via HTTP from https://60c10ba2b8d367001755666e.mockapi.io/recipe/1
+- Transform the data if required
+- Use that data to render the `<PremiumRecipeCard>` component
+
 ### UI
 
 - Translate the design as closely as possible to custom CSS. We've also provided hover styles for you to replicate.
