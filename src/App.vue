@@ -8,18 +8,26 @@
       <p>See the README file for assignment requirements.</p>
 
       <div class="premium-recipe-wrapper">
-        <PremiumRecipeCard />
+        <PremiumRecipeCardContainer v-slot="{ recipe }">
+          <PremiumRecipeCard
+            :title="recipe.title"
+            :image="recipe.image"
+            liked="true"
+          />
+        </PremiumRecipeCardContainer>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import PremiumRecipeCardContainer from "./components/PremiumRecipeCardContainer.vue";
 import PremiumRecipeCard from "./components/PremiumRecipeCard.vue";
 
 export default {
   name: "App",
   components: {
+    PremiumRecipeCardContainer,
     PremiumRecipeCard
   }
 };
@@ -39,6 +47,8 @@ export default {
 <style scoped>
 .cm-logo-wrapper {
   margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cm-logo {
@@ -54,7 +64,10 @@ export default {
 /** Remove these styles when done */
 .premium-recipe-wrapper {
   margin-top: 100px;
-  border: 2px dashed red;
+  /* border: 2px dashed red; */
   padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
