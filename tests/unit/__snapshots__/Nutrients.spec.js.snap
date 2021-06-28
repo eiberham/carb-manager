@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nutrients.vue matches snapshot 1`] = `
+<section
+  class="nutrients"
+>
+  <div
+    class="nutrients__carbs"
+  >
+    16 g
+  </div>
+   
+  <div
+    class="nutrients__proteins"
+  >
+    20 g
+  </div>
+   
+  <div
+    class="nutrients__fats"
+  >
+    6 g
+  </div>
+</section>
+`;

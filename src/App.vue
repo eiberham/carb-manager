@@ -8,26 +8,31 @@
       <p>See the README file for assignment requirements.</p>
 
       <div class="premium-recipe-wrapper">
-        <PremiumRecipeCardContainer v-slot="{ recipe }">
+        <Container v-slot="{ recipe }">
           <PremiumRecipeCard
             :title="recipe.title"
             :image="recipe.image"
-            liked="true"
+            :nutrients="recipe.nutrients"
+            :liked="true"
+            :time="recipe.preparationTimeMinutes"
+            :energy="recipe.energy"
+            :rating="recipe.rating"
+            energy-units="kilojoules"
           />
-        </PremiumRecipeCardContainer>
+        </Container>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import PremiumRecipeCardContainer from "./components/PremiumRecipeCardContainer.vue";
+import Container from "./components/Container.vue";
 import PremiumRecipeCard from "./components/PremiumRecipeCard.vue";
 
 export default {
   name: "App",
   components: {
-    PremiumRecipeCardContainer,
+    Container,
     PremiumRecipeCard
   }
 };

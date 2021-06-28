@@ -1,12 +1,23 @@
 <template>
-  <article class="recipe-card" v-if="image">
+  <article class="recipe-card">
     <section class="recipe-card__wrapper" role="button" @click="$emit('click')">
       <button class="recipe-card__like" :class="{ active: liked }"></button>
       <img class="recipe-card__picture" :src="image" :alt="title" />
-      <span class="recipe-card__premium">Premium Recipe</span>
+      <div class="recipe-card__premium">
+        <img src="../assets/trophy.svg" alt="trophy" />
+        Premium Recipe
+      </div>
       <div class="recipe-card__content">
         <div class="recipe-card__title-wrapper">
           <h1 class="recipe-card__title overflow">{{ title }}</h1>
+        </div>
+        <Rating :count="rating.count" :score="rating.score" />
+        <div class="recipe-card__detail">
+          <div class="recipe-card__timing">
+            <div class="recipe-card__time" v-html="getTimeFormat"></div>
+            <div class="recipe-card__energy" v-html="getEnergyUnit"></div>
+          </div>
+          <Nutrients :nutrients="nutrients" />
         </div>
       </div>
     </section>
@@ -14,31 +25,87 @@
 </template>
 
 <script>
+import Nutrients from "./Nutrients.vue";
+import Rating from "./Rating.vue";
+
+import { kJtoCal, formatTime } from "../utils";
+
 export default {
+  components: {
+    Nutrients,
+    Rating
+  },
   props: {
     title: {
       type: String,
-      required: true
+      required: true,
+      default: ""
     },
     image: {
       type: String,
-      required: true
+      required: true,
+      default: ""
+    },
+    nutrients: {
+      type: Object,
+      required: true,
+      default: function() {
+        return {};
+      }
     },
     liked: {
       type: Boolean,
       required: false,
       default: false
+    },
+    time: {
+      type: Number,
+      required: true,
+      default: 0
+    },
+    rating: {
+      type: Object,
+      required: true,
+      default: function() {
+        return {};
+      }
+    },
+    energy: {
+      type: Number,
+      required: true,
+      default: 0
+    },
+    energyUnits: {
+      type: String,
+      required: true,
+      default: "calories",
+      validator: function(_val) {
+        return ["calories", "kilojoules"].includes(_val);
+      }
     }
   },
-  data() {
-    return {};
-  },
-  mounted: function() {},
-  methods: {}
+  computed: {
+    /**
+     * Gets correct energy unit based on energy unit prop.
+     * @returns {string}
+     */
+    getEnergyUnit: function() {
+      return this.energyUnits == "kilojoules"
+        ? kJtoCal(this.energy) + " Kilojoules"
+        : this.energy + " Calories";
+    },
+    /**
+     * Gets correct time format based on time prop.
+     * @returns {string}
+     */
+    getTimeFormat: function() {
+      return formatTime(this.time);
+    }
+  }
 };
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
 * {
   box-sizing: border-box;
 }
@@ -64,7 +131,7 @@ export default {
 }
 
 .recipe-card__content {
-  padding: 16px;
+  padding: 8px 16px;
 }
 
 .recipe-card__wrapper {
@@ -74,50 +141,41 @@ export default {
 }
 
 .recipe-card__premium {
+  align-items: center;
   background-image: url("../assets/trophy.svg");
-  background-repeat: no-repeat;
   background-position: left center;
+  background-repeat: no-repeat;
   background-size: 12px 12px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  color: #fff;
+  display: flex;
   font-family: Proxima Nova;
+  font-size: 12px;
   font-style: normal;
   font-weight: 600;
-  font-size: 12px;
-  line-height: 12px;
-  letter-spacing: -0.2px;
-  /* color: #fff; */
-  width: 117px;
   height: 20px;
-  background: #fff;
-  opacity: 0.3;
-  border-radius: 10px;
+  left: 8px;
+  letter-spacing: -0.2px;
+  line-height: 12px;
   padding: 4px 8px;
   position: absolute;
-  left: 8px;
   top: 172px;
+  width: 117px;
 }
 
-/* .recipe-card__premium::before {
-  background-image: url("../assets/trophy.svg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 12px 12px;
-  left: 0;
-  top: 0;
-  content: "";
-  display: block;
-  position: absolute;
-  width: 12px;
-  height: 12px;
-} */
+.recipe-card__premium img {
+  margin: 0 2px;
+}
 
 .recipe-card__like {
   align-self: flex-end;
   background: transparent;
   border: 0;
-  padding: 0;
-  width: 23px;
   height: 20px;
+  padding: 0;
   position: absolute;
+  width: 23px;
 }
 
 .recipe-card__like:hover {
@@ -126,66 +184,67 @@ export default {
 
 .recipe-card__like::after {
   background-image: url("../assets/heart.svg");
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: 23px 20px;
-  background-position: center center;
   content: "";
   display: block;
   height: 20px;
-  right: 16px;
+  height: 20px;
   position: absolute;
+  right: 16px;
   top: 16px;
   width: 23px;
-  height: 20px;
 }
 
 .recipe-card__like.active::after {
   background-image: url("../assets/heart--green.svg");
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: 23px 20px;
-  background-position: center center;
   content: "";
   display: block;
   height: 20px;
-  right: 16px;
+  height: 20px;
   position: absolute;
+  right: 16px;
   top: 16px;
   width: 23px;
-  height: 20px;
 }
 
 .recipe-card__title {
   font-family: Proxima Nova;
+  font-size: 18px;
   font-style: normal;
   font-weight: bold;
-  font-size: 18px;
-  width: 311px;
-  margin: 0 0 1em 0;
-  overflow: hidden;
   height: 2.6em;
+  margin: 0 0 8px 0;
+  overflow: hidden;
   text-align: left;
+  width: 311px;
 }
 
 .overflow {
   --max-lines: 2;
-  position: relative;
   max-height: calc(var(--lh) * var(--max-lines));
   overflow: hidden;
-  /* padding-right: 1rem; */ /* space for ellipsis */
+  position: relative;
 }
+
 .overflow::before {
-  position: absolute;
-  content: "...";
   bottom: 0;
+  content: "...";
+  position: absolute;
   right: 0;
 }
+
 .overflow::after {
+  background: white;
   content: "";
+  height: 1rem;
   position: absolute;
   right: 0;
   width: 1rem;
-  height: 1rem;
-  background: white;
 }
 
 .recipe-card__picture {
@@ -197,13 +256,77 @@ export default {
   );
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
-  width: 343px;
   height: 200px;
-  overflow: hidden;
   object-fit: cover;
+  overflow: hidden;
+  width: 343px;
 }
 
 .recipe-card__picture:hover {
   opacity: 0.2;
+}
+
+.recipe-card__detail,
+.recipe-card__timing {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.recipe-card__detail > * {
+  color: #393c40;
+  font-family: Proxima Nova;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.recipe-card__timing {
+  margin-top: 8px;
+  min-width: 70%;
+  width: 100%;
+}
+
+.recipe-card__time {
+  height: 16px;
+  padding-left: 18px;
+  position: relative;
+  width: auto;
+}
+
+.recipe-card__time::before {
+  background-image: url("../assets/clock.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  content: "";
+  display: block;
+  height: 16px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 16px;
+}
+
+.recipe-card__energy {
+  height: 16px;
+  margin-left: 16px;
+  margin-right: auto;
+  padding-left: 18px;
+  position: relative;
+  width: auto;
+}
+
+.recipe-card__energy::before {
+  background-image: url("../assets/cals.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  content: "";
+  display: block;
+  height: 16px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 16px;
 }
 </style>

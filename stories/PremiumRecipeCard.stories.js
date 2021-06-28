@@ -30,9 +30,36 @@ export const Default = () => ({
         "https://images.carbmanager.com/iYKrSEf7P6EAGx3desxGmcPJTVea2lJoBiXom24tevA/resize:fit:535/L2Fzc2V0cy5jYXJibWFuYWdlci5jb20vby91c2VyJTJGNGdkMlJoRVpqM2NGR1NKWDVuYjhFQzROWjBEMiUyRmltYWdlcyUyRmJiNmExNjY4LTU1NDMtNGE3Ny1hMDQ0LWQ0ODVhM2U0ZDMwNS5qcGc_YWx0PW1lZGlh"
       )
     },
-    liked: true
+    nutrients: {
+      default: object("nutrients", { proteins: 20, carbs: 16, fats: 6 })
+    },
+    liked: {
+      default: boolean("liked", true)
+    },
+    time: {
+      default: number("time", 75)
+    },
+    energy: {
+      default: number("energy", 774)
+    },
+    rating: {
+      default: object("rating", { count: 200, score: 4.5 })
+    },
+    energyUnits: {
+      default: text("energy-units", "kilojoules")
+    }
   },
-  template:
-    '<PremiumRecipeCard @click="action" :title="title" :image="image" :liked="liked"/>',
+  template: `<PremiumRecipeCard 
+      @click="action"
+      :title="title"
+      :image="image"
+      :nutrients="nutrients"
+      :liked="liked"
+      :time="time"
+      :energy="energy"
+      :rating="rating"
+      energy-units="kilojoules"
+    />
+    `,
   methods: { action: action("clicked") }
 });

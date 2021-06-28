@@ -18,11 +18,17 @@ exports[`PremiumRecipeCard.vue matches snapshot 1`] = `
       src="https://images.carbmanager.com/iYKrSEf7P6EAGx3desxGmcPJTVea2lJoBiXom24tevA/resize:fit:535/L2Fzc2V0cy5jYXJibWFuYWdlci5jb20vby91c2VyJTJGNGdkMlJoRVpqM2NGR1NKWDVuYjhFQzROWjBEMiUyRmltYWdlcyUyRmJiNmExNjY4LTU1NDMtNGE3Ny1hMDQ0LWQ0ODVhM2U0ZDMwNS5qcGc_YWx0PW1lZGlh"
     />
      
-    <span
+    <div
       class="recipe-card__premium"
     >
+      <img
+        alt="trophy"
+        src="../assets/trophy.svg"
+      />
+      
       Premium Recipe
-    </span>
+    
+    </div>
      
     <div
       class="recipe-card__content"
@@ -35,6 +41,78 @@ exports[`PremiumRecipeCard.vue matches snapshot 1`] = `
         >
           Low Carb Buffalo Chicken Mac And Cheese W Smashed Cauliflower Medallions
         </h1>
+      </div>
+       
+      <section
+        class="rating"
+      >
+        <ul
+          class="rating__score"
+        >
+          <li
+            class="star full-star"
+          />
+          <li
+            class="star full-star"
+          />
+          <li
+            class="star full-star"
+          />
+          <li
+            class="star full-star"
+          />
+          <li
+            class="star half-star"
+          />
+        </ul>
+         
+        <div
+          class="rating__count"
+        >
+          200 ratings
+        </div>
+      </section>
+       
+      <div
+        class="recipe-card__detail"
+      >
+        <div
+          class="recipe-card__timing"
+        >
+          <div
+            class="recipe-card__time"
+          >
+            1 hr 15 min
+          </div>
+           
+          <div
+            class="recipe-card__energy"
+          >
+            3238.416 Kilojoules
+          </div>
+        </div>
+         
+        <section
+          class="nutrients"
+        >
+          <div
+            class="nutrients__carbs"
+          >
+            16 g
+          </div>
+           
+          <div
+            class="nutrients__proteins"
+          >
+            20 g
+          </div>
+           
+          <div
+            class="nutrients__fats"
+          >
+            6 g
+          </div>
+        </section>
       </div>
     </div>
   </section>

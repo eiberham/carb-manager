@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rating.vue matches snapshot 1`] = `
+<section
+  class="rating"
+>
+  <ul
+    class="rating__score"
+  >
+    <li
+      class="star full-star"
+    />
+    <li
+      class="star full-star"
+    />
+    <li
+      class="star full-star"
+    />
+    <li
+      class="star full-star"
+    />
+    <li
+      class="star half-star"
+    />
+  </ul>
+   
+  <div
+    class="rating__count"
+  >
+    200 ratings
+  </div>
+</section>
+`;
